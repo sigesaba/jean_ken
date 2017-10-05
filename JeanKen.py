@@ -14,8 +14,8 @@ class JeanKen(object):
 
     def set_player_choice(self, player_choice):
         self.player_choice = int(player_choice)
-        if 0 >= self.player_choice or 4 < self.player_choice:
-            raise ValueError()
+        if self.player_choice not in self.gestures:
+            raise IndexError('Please enter an integer between 1 to 4')
 
     def judge(self, computer_choice):
         self.computer_choice = computer_choice

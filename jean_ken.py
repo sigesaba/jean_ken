@@ -15,8 +15,11 @@ def main():
             jean_ken.set_player_choice(player_choice)
             jean_ken.judge(JeanKen.get_computer_choice())
             jean_ken.get_results_in_str()
-        except ValueError:
-            print('We accept only single digit number from 1 to 4')
+        except IndexError as ie:
+            print(ie.args[0])
+            return False
+        except ValueError as ve:
+            print('Please enter an integer value.')
             return False
         except Exception as e:
             print(e.message)
