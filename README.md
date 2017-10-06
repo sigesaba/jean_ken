@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/sigesaba/jean_ken.svg?branch=master)](https://travis-ci.org/sigesaba/jean_ken)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 # jean_ken.py
 
 This is a console application of a typical paper-rock-scissors game.
