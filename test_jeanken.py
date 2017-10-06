@@ -14,11 +14,11 @@ class TestStringMethods(unittest.TestCase):
             self.jeanken.set_player_choice("a")
 
     def test_player_choice_input_zero(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(IndexError):
             self.jeanken.set_player_choice("0")
 
     def test_player_choice_input_five(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(IndexError):
             self.jeanken.set_player_choice("5")
 
     def test_judge_draw(self):
