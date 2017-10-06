@@ -1,13 +1,15 @@
 language: python
 python:
-  - "3.2"
-  - "3.3"
-  - "3.4"
-  - "3.5"
-  - "3.5-dev" # 3.5 development branch
-  - "3.6"
-  - "3.6-dev" # 3.6 development branch
-  - "3.7-dev" # 3.7 development branch
-# command to run tests
+- '3.2'
+- '3.3'
+- '3.4'
+- '3.5'
+- 3.5-dev
+- '3.6'
+- 3.6-dev
+- 3.7-dev
 script:
-  - python test_jeanken.py
+- python test_jeanken.py
+notifications:
+  slack:
+    secure: n2S7TcMdGzlfvy7XlzQq3QwrO97cX7wNbVx+9r+XS+33Mp2yszvK9Ki4hjayfUsFU2X6DsH2aggk0E3uLhNwlwNZ2cPC8FNZDCKq1DNWAhk6TEKoCbfE154PYYGIrGyrxbWmgIBhfYNNY7yvSu/t6fY6l6SoSzcb0eJmCBLXjOTpkv1xl3a3apm44jF24w4f5sdzQaSBeUW84CFmFNzAzse6zXJ+w/XC4hTwwnMVP3uv7nYsv4jhpX4DRMZdKtMHLnt3iq0Zux/6xABPGs9YGblYYrkGVAMn+A9DaAugkZupJEg4favFiL8jdm4kATXZWxuH5y3obPz8/2OVTjFdIR5PAt+5bjBdSn3rOPIlnQiAQJ+77lybLxpgbL0A8ffMJBgzoa8YBOh2AAu/TBEP8pDAY8Q4URlKFpEoFn5SQfKkc4dL4pxVLXeWLVUhjl5UbHAVWXaY3r1gTHwduXHiyfTOmqZWp2IcvXtvpJS/Y31J3kdT30SgkESGKHgGZZmiCNgyEHP2qTF7YyidjJYiIkUR/PPtPZn+4Mxu2k6o8ZnTrRN6wIFQAMq+POO+Mr1sY9Y2gmsKQy6iGTVk+xmb5+hQ3k1GZf8iMVZzO5Wv4d0i8TNJTCAbHHI8MWzDlevZn/8OCBBPeNBrook5mERBdMM2zqXWNYjfoBLncDfi0XA=
