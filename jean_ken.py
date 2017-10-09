@@ -17,10 +17,10 @@ def main():
             jean_ken.get_results_in_str()
         except IndexError as ie:
             print(ie.args[0])
-            return False
+            continue
         except ValueError as ve:
             print('Please enter an integer value.')
-            return False
+            continue
         except Exception as e:
             print(e.message)
             return False
