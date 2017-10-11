@@ -10,6 +10,14 @@ def main():
     while True:
         player_choice = input('Ready? Choose [1]:' + jean_ken.gestures[1] + ', [2]:' + jean_ken.gestures[2] + ', [3]:' + jean_ken.gestures[3] + ', [4]:No Thank you. > ')
         if "4" == player_choice:
+            print('Thank you for playing!\n')
+            if (len(recorder.win_loss) > 1):
+
+                display_results = input('Would you like to see your results?  [Y/N]: > ')
+
+                if (display_results.upper() == 'Y'):
+                    recorder.display_win_loss_record(jean_ken.gestures)
+
             print('Thank you for playing! See you later!\n')
             break
 
