@@ -1,5 +1,7 @@
 import unittest
-from JeanKen import JeanKen
+
+from classes.JeanKen import JeanKen
+
 
 class TestStringMethods(unittest.TestCase):
 

@@ -1,4 +1,4 @@
-from JeanKen import JeanKen
+from classes.JeanKen import JeanKen
 
 
 def main():
