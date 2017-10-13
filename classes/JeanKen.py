@@ -12,12 +12,11 @@ class JeanKen(object):
         self.winCount = 0
         self.drawCount = 0
 
-    def set_player_choice(self, player_choice):
+    def judge(self, player_choice, computer_choice):
         self.player_choice = int(player_choice)
         if self.player_choice not in self.gestures:
             raise IndexError('Please enter an integer between 1 to 4')
 
-    def judge(self, computer_choice):
         self.computer_choice = computer_choice
         self.playCount += 1
 

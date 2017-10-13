@@ -23,8 +23,7 @@ def main():
 
         try:
             computer_choice = JeanKen.get_computer_choice()  # type: int
-            jean_ken.set_player_choice(player_choice)
-            jean_ken.judge(computer_choice)
+            jean_ken.judge(player_choice, computer_choice)
             jean_ken.get_results_in_str()
             recorder.record_win_loss(jean_ken.get_result(), player_choice, computer_choice)
 
