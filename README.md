@@ -22,7 +22,7 @@ Python 3
 
 run jean_ken.py
 ```
-$ python jean_ken.py
+$ python -m unittest
 ```
 
 ## Running the tests

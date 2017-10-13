@@ -64,6 +64,9 @@ class JeanKen(object):
     def get_lose_count(self):
         return self.playCount - self.winCount - self.drawCount
 
+    def get_result(self):
+        return self.result
+
     def get_results_in_str(self):
         print(
             '\nYour hand: {0:s} vs Computer hand: {1:s}\n'.format(self.gestures[self.player_choice],
