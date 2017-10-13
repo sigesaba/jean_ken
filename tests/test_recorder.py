@@ -17,6 +17,9 @@ class TestWinLossRecordMethods(unittest.TestCase):
         self.recorder.record_win_loss('draw', 1, 1)
         self.assertEqual(len(self.recorder.win_loss), 3)
 
+    def test_count_win_loss_record_fail(self):
+        with self.assertRaises(TypeError):
+            self.recorder.record_win_loss('win', 1)
 
 if __name__ == '__main__':
     unittest.main()
