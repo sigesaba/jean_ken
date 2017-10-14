@@ -8,17 +8,16 @@ class JeanKen(object):
         self.player_choice = ''  # type: int
         self.computer_choice = ''  # type: int
         self.result = ''  # type: str
-        self.playCount = 0
-        self.winCount = 0
-        self.drawCount = 0
+
+    def validatePlayerChoice(self, player_choice):
+        if player_choice not in self.gestures:
+            raise IndexError('Please enter an integer between 1 to 4')
+        else:
+            return True
 
     def judge(self, player_choice, computer_choice):
-        self.player_choice = int(player_choice)
-        if self.player_choice not in self.gestures:
-            raise IndexError('Please enter an integer between 1 to 4')
-
+        self.player_choice = player_choice
         self.computer_choice = computer_choice
-        self.playCount += 1
 
         # Judging by deduction:
         # 1 rock     vs paper(2)    : 1-2 = -1 lose
@@ -28,15 +27,13 @@ class JeanKen(object):
         # 3 scissors vs rock(1)     : 3-1 = 2  lose
         # 3 scissors vs paper(2)    : 3-2 = 1  win
         if self.computer_choice == self.player_choice:
-            self.drawCount += 1
-            self.result = 'draw'
+            return 'draw'
         else:
             value = self.player_choice - self.computer_choice
             if value == -2 or value == 1:
-                self.winCount += 1
-                self.result = 'win'
+                return 'win'
             elif value == -1 or value == 2:
-                self.result = 'lose'
+                return 'lose'
 
     @staticmethod
     def get_computer_choice():
@@ -50,29 +47,3 @@ class JeanKen(object):
     @staticmethod
     def print_ending_message():
         print('----------------------\n')
-
-    def get_play_count(self):
-        return self.playCount
-
-    def get_win_count(self):
-        return self.winCount
-
-    def get_draw_count(self):
-        return self.drawCount
-
-    def get_lose_count(self):
-        return self.playCount - self.winCount - self.drawCount
-
-    def get_result(self):
-        return self.result
-
-    def get_results_in_str(self):
-        print(
-            '\nYour hand: {0:s} vs Computer hand: {1:s}\n'.format(self.gestures[self.player_choice],
-                                                              self.gestures[self.computer_choice]) +
-            'RESULT: you {0:s}\n\n'.format(self.result) +
-            'You played: {0:d} time(s)\n'.format(self.get_play_count()) +
-            'You won: {0:d} time(s)\n'.format(self.get_win_count()) +
-            'You lost: {0:d} time(s)\n'.format(self.get_lose_count()) +
-            'You drew: {0:d} time(s)'.format(self.get_draw_count())
-        )
