@@ -20,23 +20,22 @@ def main():
                     display_results = input('Would you like to see your results?  [Y/N]: > ')
 
                     if (display_results.upper() == 'Y'):
-                        # recorder.set_score(jean_ken.get_play_count(), jean_ken.get_win_count(), jean_ken.get_lose_count(), jean_ken.get_draw_count())
                         recorder.display_win_loss_record(jean_ken.gestures)
 
-                print('Thank you for playing! See you later!\n')
+                print('\nThank you for playing! See you later!\n')
                 break
+            else:
+                player_choice = int(player_input)
+                jean_ken.validatePlayerChoice(player_choice)
 
-            player_choice = int(player_input)
-            jean_ken.validatePlayerChoice(player_choice)
-
-            computer_choice = JeanKen.get_computer_choice()  # type: int
-            result = jean_ken.judge(player_choice, computer_choice)
-            recorder.record_win_loss(result, player_choice, computer_choice)
-            print(
-                'RESULT: you {0:s}\n\n'.format(result) +
-                '\nYour hand: {0:s} vs Computer hand: {1:s}\n'.format(jean_ken.gestures[int(player_choice)],
-                                                                  jean_ken.gestures[computer_choice])
-            )
+                computer_choice = JeanKen.get_computer_choice()  # type: int
+                result = jean_ken.judge(player_choice, computer_choice)
+                recorder.record_win_loss(result, player_choice, computer_choice)
+                print(
+                    'RESULT: you {0:s}\n\n'.format(result) +
+                    '\nYour hand: {0:s} vs Computer hand: {1:s}\n'.format(jean_ken.gestures[int(player_choice)],
+                                                                      jean_ken.gestures[computer_choice])
+                )
 
         except IndexError as e:
             print('{0}'.format(e))

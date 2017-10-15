@@ -20,10 +20,15 @@ class Recorder(object):
 
         self.win_loss.append((result, player_choice, computer_choice))
 
+    def getWinningAve(self, played, won):
+        self.winning_ave = won/played
+        return self.winning_ave
+
     def display_win_loss_record(self, gestures):
         cnt = 1
 
-        print('Played: {played:d}, Won: {won:d}, Lost: {lost:d}, Drew: {drew:d}'.format(played=self.played, won=self.won, lost=self.lost, drew=self.drew))
+        print('\nPlayed: {played:d}, Won: {won:d}, Lost: {lost:d}, Drew: {drew:d}'.format(played=self.played, won=self.won, lost=self.lost, drew=self.drew))
+        print('Your Winning Average. is: {winning_ave:.1%}\n'.format(winning_ave=self.getWinningAve(self.played, self.won)))
         print('|{no:<4s}|{result:<7s}|{you:<9s}|{computer:<9s}|'.format(no='No', result='Result', you='You', computer='Computer'))
 
         for r in self.win_loss:
