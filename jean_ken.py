@@ -38,14 +38,15 @@ def main():
                                                                   jean_ken.gestures[computer_choice])
             )
 
-        except IndexError as ie:
-            print(ie.args[0])
+        except IndexError as e:
+            print('{0}'.format(e))
             continue
-        except ValueError as ve:
+        except ValueError as e:
             print('Please enter an integer value.')
             continue
         except Exception as e:
-            print(e.message)
+            print('{0}'.format(e))
+            print('{0}'.format(e.__context__))
             return False
 
         JeanKen.print_ending_message()
