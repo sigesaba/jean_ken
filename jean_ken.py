@@ -32,8 +32,8 @@ def main():
                 result = jean_ken.judge(player_choice, computer_choice)
                 recorder.record_win_loss(result, player_choice, computer_choice)
                 print(
-                    'RESULT: you {0:s}\n\n'.format(result) +
-                    '\nYour hand: {0:s} vs Computer hand: {1:s}\n'.format(jean_ken.gestures[int(player_choice)],
+                    '\nRESULT: you {0:s}\n'.format(result.upper()) +
+                    'Your hand: {0:s} vs Computer hand: {1:s}\n'.format(jean_ken.gestures[int(player_choice)],
                                                                       jean_ken.gestures[computer_choice])
                 )
 
