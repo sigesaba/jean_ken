@@ -2,7 +2,6 @@ import random
 
 
 class JeanKen(object):
-
     def __init__(self):
         self.gestures = {1: 'Rock', 2: 'Paper', 3: 'Scissors'}
         self.player_choice = ''  # type: int

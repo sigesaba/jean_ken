@@ -10,10 +10,12 @@ def main():
     while True:
         try:
             player_input = input(
-                'Ready? Choose [1]:' + jean_ken.gestures[1] + ', [2]:' + jean_ken.gestures[2] + ', [3]:' +
-                jean_ken.gestures[3] + ', [4]:No Thank you. > ')
+                'Ready? Choose [1]:' + jean_ken.gestures[1] + \
+                ', [2]:' + jean_ken.gestures[2] + \
+                ', [3]:' + jean_ken.gestures[3] + \
+                ', [4]:No Thank you. > ')
 
-            if "4" == player_input:
+            if '4' == player_input:
                 print('Thank you for playing!\n')
                 if (len(recorder.win_loss) > 1):
 
@@ -34,7 +36,7 @@ def main():
                 print(
                     '\nRESULT: you {0:s}\n'.format(result.upper()) +
                     'Your hand: {0:s} vs Computer hand: {1:s}\n'.format(jean_ken.gestures[int(player_choice)],
-                                                                      jean_ken.gestures[computer_choice])
+                                                                        jean_ken.gestures[computer_choice])
                 )
 
         except IndexError as e:
