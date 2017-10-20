@@ -1,11 +1,13 @@
 from classes.JeanKen import JeanKen
 from classes.Recorder import Recorder
+from classes.Exporter import Exporter
 
 
 def main():
     JeanKen.print_opening_message()
     jean_ken = JeanKen()
     recorder = Recorder()
+    exporter = Exporter()
 
     while True:
         try:
@@ -18,13 +20,12 @@ def main():
             if '4' == player_input:
                 print('Thank you for playing!\n')
                 if (len(recorder.win_loss) > 1):
-
                     exit_confirmed = confirm_exit()
                     if (exit_confirmed):
-                        recorder.display_win_loss_record(jean_ken.gestures)
+                        recorder.display_win_loss_record()
+                        exporter.exportToCSV(recorder.get_win_loss())
                     else:
                         print('\nThank you for playing! See you later!\n')
-
                 break
             else:
                 player_choice = int(player_input)
@@ -32,7 +33,7 @@ def main():
 
                 computer_choice = JeanKen.get_computer_choice()  # type: int
                 result = jean_ken.judge(player_choice, computer_choice)
-                recorder.record_win_loss(result, player_choice, computer_choice)
+                recorder.record_win_loss(jean_ken.gestures, result, player_choice, computer_choice)
                 print(
                     '\nRESULT: you {0:s}\n'.format(result.upper()) +
                     'Your hand: {0:s} vs Computer hand: {1:s}\n'.format(jean_ken.gestures[int(player_choice)],
