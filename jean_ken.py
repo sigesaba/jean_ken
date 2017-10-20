@@ -24,7 +24,7 @@ def main():
                     display_results = input('Would you like to see your results?  [Y/N]: > ')
 
                     if (display_results.upper() == 'Y'):
-                        recorder.display_win_loss_record(jean_ken.gestures)
+                        recorder.display_win_loss_record()
                         exporter.exportToCSV(recorder.get_win_loss())
 
                 print('\nThank you for playing! See you later!\n')
@@ -35,7 +35,7 @@ def main():
 
                 computer_choice = JeanKen.get_computer_choice()  # type: int
                 result = jean_ken.judge(player_choice, computer_choice)
-                recorder.record_win_loss(result, player_choice, computer_choice)
+                recorder.record_win_loss(jean_ken.gestures, result, player_choice, computer_choice)
                 print(
                     '\nRESULT: you {0:s}\n'.format(result.upper()) +
                     'Your hand: {0:s} vs Computer hand: {1:s}\n'.format(jean_ken.gestures[int(player_choice)],
