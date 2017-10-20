@@ -7,6 +7,9 @@ class Recorder(object):
         self.drew = 0  # type: int
         self.winning_ave = 0  # type: float
 
+    def get_win_loss(self):
+        return self.win_loss
+
     def record_win_loss(self, result, player_choice, computer_choice):
         self.played += 1
         if result == 'win':

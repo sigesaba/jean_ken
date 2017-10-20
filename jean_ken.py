@@ -1,11 +1,13 @@
 from classes.JeanKen import JeanKen
 from classes.Recorder import Recorder
+from classes.Exporter import Exporter
 
 
 def main():
     JeanKen.print_opening_message()
     jean_ken = JeanKen()
     recorder = Recorder()
+    exporter = Exporter()
 
     while True:
         try:
@@ -23,6 +25,7 @@ def main():
 
                     if (display_results.upper() == 'Y'):
                         recorder.display_win_loss_record(jean_ken.gestures)
+                        exporter.exportToCSV(recorder.get_win_loss())
 
                 print('\nThank you for playing! See you later!\n')
                 break
