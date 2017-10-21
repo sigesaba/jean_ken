@@ -28,9 +28,12 @@ class Recorder(object):
     def display_win_loss_record(self):
         cnt = 1
 
-        print('\nPlayed: {played:d}, Won: {won:d}, Lost: {lost:d}, Drew: {drew:d}'.format(played=self.played, won=self.won, lost=self.lost, drew=self.drew))
         print(
-            'Your Winning Average is: {winning_ave:.1%}\n'.format(winning_ave=self.getWinningAve(self.played, self.won)))
+        '\nPlayed: {played:d}, Won: {won:d}, Lost: {lost:d}, Drew: {drew:d}'.format(played=self.played, won=self.won,
+                                                                                    lost=self.lost, drew=self.drew))
+        print(
+            'Your Winning Average is: {winning_ave:.1%}\n'.format(
+                winning_ave=self.getWinningAve(self.played, self.won)))
         print('|{no:<4s}|{result:<7s}|{you:<9s}|{computer:<9s}|'.format(no='No', result='Result', you='You',
                                                                         computer='Computer'))
 
@@ -39,3 +42,5 @@ class Recorder(object):
                                                                                 player=r[1],
                                                                                 computer=r[2]))
             cnt += 1
+        else:
+            print()
