@@ -20,12 +20,16 @@ def main():
             if '4' == player_input:
                 print('Thank you for playing!\n')
                 if (len(recorder.win_loss) > 1):
-                    exit_confirmed = confirm_exit()
+
+                    exit_confirmed = confirm('Would you like to see your results?  [Y/N]: > ')
                     if (exit_confirmed):
                         recorder.display_win_loss_record()
+
+                    export_confirmed = confirm('Would you like to export as csv file?  [Y/N]: > ')
+                    if (export_confirmed):
                         exporter.exportToCSV(recorder.get_win_loss())
-                    else:
-                        print('\nThank you for playing! See you later!\n')
+
+                print('\nThank you for playing! See you later!\n')
                 break
             else:
                 player_choice = int(player_input)
@@ -53,9 +57,10 @@ def main():
 
         JeanKen.print_ending_message()
 
-def confirm_exit():
+
+def confirm(confirmation_str):
     while True:
-        display_results = input('Would you like to see your results?  [Y/N]: > ')
+        display_results = input(confirmation_str)
 
         if (display_results.upper() == 'Y'):
             return True
@@ -63,6 +68,7 @@ def confirm_exit():
             return False
         else:
             continue
+
 
 if __name__ == '__main__':
     main()
