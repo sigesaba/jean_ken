@@ -22,13 +22,13 @@ Python 3
 
 run jean_ken.py
 ```
-$ python -m unittest
+$ python jean_ken.py
 ```
 
 ## Running the tests
 
 ```
-$ python test_jeanken.py
+$ python -m unittest
 ```
 
 ## Authors
