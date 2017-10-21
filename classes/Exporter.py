@@ -15,3 +15,5 @@ class Exporter(object):
             writer = csv.writer(csvfile, delimiter=',')
             for line in win_loss:
                 writer.writerow(line)
+
+        print('Exported as ' + filename)
