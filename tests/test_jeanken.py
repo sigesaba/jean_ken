@@ -13,11 +13,11 @@ class TestStringMethods(unittest.TestCase):
 
     def test_player_choice_input_zero(self):
         with self.assertRaises(IndexError):
-            self.jeanken.validatePlayerChoice(0)
+            self.jeanken.validate_player_choice(0)
 
         def test_player_choice_input_five(self):
             with self.assertRaises(IndexError):
-                self.jeanken.validatePlayerChoice(5)
+                self.jeanken.validate_player_choice(5)
 
     def test_judge_draw(self):
         self.assertEqual(self.jeanken.judge(1, 1), 'draw')

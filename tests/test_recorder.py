@@ -18,7 +18,7 @@ class TestWinLossRecordMethods(unittest.TestCase):
         self.recorder.record_win_loss(self.jeanken.gestures, 'lose', 1, 2)
         self.recorder.record_win_loss(self.jeanken.gestures, 'draw', 1, 1)
         self.assertEqual(len(self.recorder.win_loss), 3)
-        ave = '{winning_ave:.1%}'.format(winning_ave=self.recorder.getWinningAve(self.recorder.played, self.recorder.won))
+        ave = '{winning_ave:.1%}'.format(winning_ave=self.recorder.get_winning_ave(self.recorder.played, self.recorder.won))
         self.assertEqual('33.3%', ave)
 
     def test_count_win_loss_record_fail(self):

@@ -8,7 +8,7 @@ class JeanKen(object):
         self.computer_choice = ''  # type: int
         self.result = ''  # type: str
 
-    def validatePlayerChoice(self, player_choice):
+    def validate_player_choice(self, player_choice):
         if player_choice not in self.gestures:
             raise IndexError('Please enter an integer between 1 to 4')
         else:

@@ -34,13 +34,13 @@ def main():
 
                     export_confirmed = confirm('Would you like to export as csv file?  [Y/N]: > ')
                     if (export_confirmed):
-                        exporter.exportToCSV(recorder.get_win_loss())
+                        exporter.export_to_csv(recorder.get_win_loss())
 
                 print('\nThank you for playing! See you later!\n')
                 break
             else:
                 player_choice = int(player_input)
-                jean_ken.validatePlayerChoice(player_choice)
+                jean_ken.validate_player_choice(player_choice)
 
                 computer_choice = JeanKen.get_computer_choice()  # type: int
                 result = jean_ken.judge(player_choice, computer_choice)
