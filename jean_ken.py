@@ -6,8 +6,9 @@ from classes.Exporter import Exporter
 def main():
     JeanKen.print_opening_message()
     jean_ken = JeanKen()
-    recorder = Recorder()
+    recorder = Recorder(10)
     exporter = Exporter()
+    print('You can play {0:d} times!'.format(recorder.get_play_limit()))
 
     while True:
         try:
@@ -17,8 +18,14 @@ def main():
                 ', [3]:' + jean_ken.gestures[3] + \
                 ', [4]:No Thank you. > ')
 
-            if '4' == player_input:
+            exit_game = True if player_input == '4' else False
+            reached_limit = True if recorder.has_reached_to_play_limit() else False
+
+            if exit_game or reached_limit:
                 print('Thank you for playing!\n')
+                if reached_limit:
+                    print('You have played {0:d} times!'.format(recorder.get_play_limit()))
+
                 if (len(recorder.win_loss) > 1):
 
                     exit_confirmed = confirm('Would you like to see your results?  [Y/N]: > ')
