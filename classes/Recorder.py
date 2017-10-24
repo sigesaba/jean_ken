@@ -1,11 +1,21 @@
 class Recorder(object):
-    def __init__(self):
+    def __init__(self, play_times = 10):
         self.win_loss = list()  # type: list
         self.played = 0  # type: int
         self.won = 0  # type: int
         self.lost = 0  # type: int
         self.drew = 0  # type: int
         self.winning_ave = 0  # type: float
+        self.play_limit = play_times # type: int
+
+    def has_reached_to_play_limit(self):
+        if (self.play_limit <= self.played):
+            return True
+        else:
+            return False
+
+    def get_play_limit(self):
+        return self.play_limit
 
     def get_win_loss(self):
         return self.win_loss
