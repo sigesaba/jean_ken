@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from classes.JeanKen import JeanKen
 from classes.Recorder import Recorder
 from classes.Exporter import Exporter
